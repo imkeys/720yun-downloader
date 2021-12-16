@@ -45,6 +45,7 @@ class Crawler:
         suffix = self.getSuffix(imgurl)
         # 指定UA和referrer，减少403
         refer = self.getReferrer(imgurl)
+        print(refer)
         opener = urllib.request.build_opener()
         opener.addheaders = [
             ('User-agent', 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0'),
@@ -54,7 +55,7 @@ class Crawler:
         urllib.request.urlretrieve(imgurl, self.__dir + str(self.__counter) + str(suffix))
 
     def start(self):
-        imgurl = 'https://saas-image.jingwxcx.com/upload_files/2021/11/15/2436c297feb46be565650acdb4d99f2d.jpg'
+        imgurl = 'https://ssl-panoimg131.720static.com/resource/prod/b51if9b2281/91b27wfOybf/46844269/imgs/r/l3/05/l3_r_05_03.jpg'
         self.saveImage(imgurl)
 
 if __name__ == '__main__':
@@ -64,3 +65,4 @@ if __name__ == '__main__':
 
 # https://ssl-panoimg131.720static.com/resource/prod/b51if9b2281/91b27wfOybf/46844269/imgs/r/l3/05/l3_r_05_05.jpg
 # https://ssl-panoimg131.720static.com/resource/prod/b51if9b2281/91b27wfOybf/46844269/imgs/r/l3/05/l3_r_05_03.jpg
+# https://saas-image.jingwxcx.com/upload_files/2021/11/15/2436c297feb46be565650acdb4d99f2d.jpg
