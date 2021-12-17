@@ -43,13 +43,17 @@ class Downloader:
     noodles = ['b', 'd', 'f', 'l', 'r', 'u']
     mode = 'l3'
     length = 6
+    isFill = True
     suffix = '.jpg'
     imgs = []
     for k in noodles:
       for i in range(1, (length + 1)):
         for j in range(1, (length + 1)):
-          file = mode + '_' + k + '_' + str(i) + '_' + str(j) + suffix
-          folder = k + '/'+ mode +'/' + str(i) + '/'
+          if (isFill):
+            i = str(i).zfill(2)
+            j = str(j).zfill(2)
+          file = mode + '_' + k + '_' + i + '_' + j + suffix
+          folder = k + '/'+ mode +'/' + i + '/'
           imgs.append(basePath + folder + file)
     return imgs
 
