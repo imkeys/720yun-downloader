@@ -18,6 +18,7 @@ class Crawler:
     __time_sleep = 0.1
     __counter = 0
     __dir = './d/'
+    __referrer = 'https://www.720yun.com'
 
     def __init__(self, t=0.1):
         self.time_sleep = t
@@ -30,11 +31,14 @@ class Crawler:
             return '.jpeg'
 
     def getReferrer(self, url):
-        par = urllib.parse.urlparse(url)
-        if par.scheme:
-            return par.scheme + '://' + par.netloc
+        if self.__referrer:
+            return self.__referrer
         else:
-            return par.netloc
+            par = urllib.parse.urlparse(url)
+            if par.scheme:
+                return par.scheme + '://' + par.netloc
+            else:
+                return par.netloc
 
     def saveImage(self, imgurl):
         if not os.path.exists(self.__dir):
