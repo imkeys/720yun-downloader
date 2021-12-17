@@ -19,13 +19,13 @@ class console:
     print(msg)
 
   @staticmethod
-  def loading(txt):
+  def loading(txt, index, length):
     console.clear()
     if (console.__loop + 1 > 3):
       console.__loop = 0
     else:
       console.__loop += 1
-    print('[Downloading... '+ console.__loopChart[console.__loop] +'] ' + txt)
+    print('[Downloading... '+ str(index+1) +'/'+ str(length) +'] ' + console.__loopChart[console.__loop] + ' ' + txt)
 
 class soup:
   __header = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0'
@@ -43,7 +43,6 @@ class soup:
     # 不存在则创建
     if not is_exists:
       os.makedirs(new_path)
-      # console.log(new_path + ' is created')
     else:
       console.log(new_path + ' already exist')
   

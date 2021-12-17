@@ -31,24 +31,26 @@ class Downloader:
   def creatImgList(self):
     imgList = self.initImg()
     startTime = time()
-    for item in imgList:
-      console.loading(item)
+    for index, item in enumerate(imgList):
+      console.loading(item, index, len(imgList))
       self.download(item)
     console.clear()
+    console.log(str(len(imgList)) + ' pictures downloaded.')
     console.log('Download time: ' + str(round((time() - startTime), 2)) + 's')
   
   def initImg(self):
     basePath = 'https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/'
     noodles = ['b', 'd', 'f', 'l', 'r', 'u']
     mode = 'l1'
+    length = 2
     suffix = '.jpg'
     imgs = []
     # 生成文件的规则会变化，根据实际情况重写
     for k in noodles:
-      for i in range(1, 3):
-        for j in range(1, 3):
+      for i in range(1, (length + 1)):
+        for j in range(1, (length + 1)):
           file = mode + '_' + k + '_' + str(i) + '_' + str(j) + suffix
-          folder = k + '/l1/' + str(i) + '/'
+          folder = k + '/'+ mode +'/' + str(i) + '/'
           imgs.append(basePath + folder + file)
     return imgs
 
@@ -56,7 +58,7 @@ if __name__ == '__main__':
   downloader = Downloader()
   downloader.start()
 
-
+# https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/b/l3/2/l3_b_2_2.jpg
 # https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/1/l1_d_1_1.jpg
 # https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/2/l1_d_2_2.jpg
 # https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/2/l1_d_2_1.jpg
