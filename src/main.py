@@ -41,8 +41,8 @@ class Downloader:
   def initImg(self):
     basePath = 'https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/'
     noodles = ['b', 'd', 'f', 'l', 'r', 'u']
-    mode = 'l1'
-    length = 2
+    mode = 'l3'
+    length = 6
     suffix = '.jpg'
     imgs = []
     for k in noodles:
