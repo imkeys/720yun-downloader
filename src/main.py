@@ -53,7 +53,6 @@ class Downloader:
     return imgs
 
 if __name__ == '__main__':
-  # console.clear()
   downloader = Downloader()
   downloader.start()
 
