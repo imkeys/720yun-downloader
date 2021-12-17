@@ -45,7 +45,6 @@ class Downloader:
     length = 2
     suffix = '.jpg'
     imgs = []
-    # 生成文件的规则会变化，根据实际情况重写
     for k in noodles:
       for i in range(1, (length + 1)):
         for j in range(1, (length + 1)):
@@ -58,10 +57,13 @@ if __name__ == '__main__':
   downloader = Downloader()
   downloader.start()
 
-# https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/b/l3/2/l3_b_2_2.jpg
-# https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/1/l1_d_1_1.jpg
-# https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/2/l1_d_2_2.jpg
-# https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/2/l1_d_2_1.jpg
-# https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/l/l1/1/l1_l_1_2.jpg
-# https://ssl-panoimg131.720static.com/resource/prod/b51if9b2281/91b27wfOybf/46844269/imgs/r/l3/05/l3_r_05_05.jpg
-# https://ssl-panoimg131.720static.com/resource/prod/b51if9b2281/91b27wfOybf/46844269/imgs/r/l3/05/l3_r_05_03.jpg
+
+'''
+https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/b/l3/2/l3_b_2_2.jpg
+https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/1/l1_d_1_1.jpg
+https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/2/l1_d_2_2.jpg
+https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/d/l1/2/l1_d_2_1.jpg
+https://ssl-panoimg131.720static.com/resource/prod/35a379das02/986jOrkvtv9/41811474/1622995819/imgs/l/l1/1/l1_l_1_2.jpg
+https://ssl-panoimg131.720static.com/resource/prod/b51if9b2281/91b27wfOybf/46844269/imgs/r/l3/05/l3_r_05_05.jpg
+https://ssl-panoimg131.720static.com/resource/prod/b51if9b2281/91b27wfOybf/46844269/imgs/r/l3/05/l3_r_05_03.jpg
+'''
